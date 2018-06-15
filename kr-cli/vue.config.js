@@ -6,11 +6,11 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     open: process.platform === 'darwin',
-    host: 'insight-backend.jingdata.com',
+    host: 'localhost',
     port: 8988,
     proxy: {
       'operation': {
-        target: 'http://insighttest-backend.jingdata.com/',
+        target: 'http://localhost:8080/',
         ws: true,
         changeOrigin: true
       }
