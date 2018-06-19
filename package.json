@@ -9,6 +9,12 @@
   "keywords": [
     "startkit"
   ],
+  "files": [
+    "index.js",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
   "author": "沈凤蛟 <674735426@qq.com>",
   "license": "ISC",
   "dependencies": {
