@@ -5,6 +5,7 @@ const program = require('commander');
 const download = require('download-git-repo');
 const handlebars = require('handlebars');
 const inquirer = require('inquirer');
+const execa = require('execa');
 const ora = require('ora');
 const chalk = require('chalk');
 const symbols = require('log-symbols');
@@ -24,6 +25,8 @@ program.version('1.0.0', '-v, --version')
                 }
             ]).then((answers) => {
                 const spinner = ora('downloading...');
+                const npminstall = ora('npminstalling...');
+                const runserve = ora('runserve...');
                 spinner.start();
                 download('36KrFE/kr-vue-base', root, (err) => {
                     if (err) {
@@ -43,6 +46,17 @@ program.version('1.0.0', '-v, --version')
                             fs.writeFileSync(fileName, result);
                         }
                         console.log(symbols.success, chalk.green('Created success!'));
+                        npminstall.start()
+                        execa.shell(`cd ${root};npm i`).then(r => {
+                            npminstall.fail()
+                            runserve.start()
+                            return execa.shell('npm run serve')
+                        }).then(r => {
+                            runserve.fail()
+                        }).catch(error => {
+                            runserve.fail()
+                            console.log(error);
+                        });
                     }
                 })
             })
