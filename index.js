@@ -10,7 +10,7 @@ const ora = require('ora');
 const chalk = require('chalk');
 const symbols = require('log-symbols');
 const path = require('path');
-program.version('1.0.0', '-v, --version')
+program.version('1.3.0', '-v, --version')
     .command('init <name>')
     .action((name) => {
         const root = path.join(process.cwd(), name);
