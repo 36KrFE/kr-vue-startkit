@@ -46,15 +46,11 @@ program.version('1.0.0', '-v, --version')
                             fs.writeFileSync(fileName, result);
                         }
                         console.log(symbols.success, chalk.green('Created success!'));
-                        npminstall.start()
+                        npminstall.start();
                         execa.shell(`cd ${root};npm i`).then(r => {
-                            npminstall.fail()
-                            runserve.start()
-                            return execa.shell('npm run serve')
-                        }).then(r => {
-                            runserve.fail()
+                            npminstall.info(r.stdout);
                         }).catch(error => {
-                            runserve.fail()
+                            npminstall.fail();
                             console.log(error);
                         });
                     }

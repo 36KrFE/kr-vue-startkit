@@ -18,7 +18,5 @@
   description：<项目描述>
   author: <作者>
   downloading。。。。。。
-  cd <项目名称>
-  npm install
   npm run serve
 ```
