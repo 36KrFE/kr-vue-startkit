@@ -1,16 +1,26 @@
 {
   "name": "kr-vue-startkit",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "vue构建脚手架",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bugs": {
+    "url": "https://github.com/36KrFE/kr-vue-startkit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/36KrFE/kr-vue-startkit.git"
+  },
   "bin": {
     "kr-vue-startkit": "./index.js"
   },
   "keywords": [
-    "startkit"
+    "startkit",
+    "vue",
+    "cli",
+    "vuex"
   ],
   "files": [
     "index.js",
@@ -19,7 +29,17 @@
     "README.md"
   ],
   "author": "沈凤蛟 <674735426@qq.com>",
-  "license": "ISC",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "674735426@qq.com",
+      "name": "沈凤蛟"
+    },
+    {
+      "email": "46517115@qq.com",
+      "name": "Ryouaki"
+    }
+  ],
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
